@@ -314,7 +314,18 @@ document.addEventListener("DOMContentLoaded", function () {
       // Show alert
       alert(`Calling ${serviceName} at ${serviceNumber}`);
 
-      
+      // Add to Call History
+      let historyItem = document.createElement("div");
+      historyItem.className = "flex justify-between items-center border-b py-2";
+      historyItem.innerHTML = `
+        <p class="text-sm font-medium">${serviceName}</p>
+        <p class="text-sm font-bold">${serviceNumber}</p>
+      `;
+      historyBox.appendChild(historyItem);
+    });
+  });
+
+  
 
 
 </script>
