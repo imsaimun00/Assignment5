@@ -332,6 +332,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+    // Copy buttons functionality
+  const copyButtons = document.querySelectorAll(".bg-white button img[src*='copy']");
+  const copyCountEl = document.querySelector("nav ul li:nth-child(3) p");
+  let copyCount = parseInt(copyCountEl.textContent);
+
+  copyButtons.forEach(btn => {
+    btn.parentElement.addEventListener("click", function () {
+      const card = btn.closest(".bg-white");
+      const serviceNumber = card.querySelector("h1").textContent;
+
+      navigator.clipboard.writeText(serviceNumber).then(() => {
+        copyCount++;
+        copyCountEl.textContent = copyCount + " Copy";
+        alert(`Number ${serviceNumber} copied to clipboard!`);
+      });
+    });
+  });
 
 
 </script>
