@@ -273,7 +273,28 @@
 
    </main>
 
-    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Navbar counts
+  const heartCountEl = document.querySelector("nav ul li:nth-child(1) p");
+  const coinCountEl = document.querySelector("nav ul li:nth-child(2) p");
+
+  let heartCount = parseInt(heartCountEl.textContent);
+  let coins = parseInt(coinCountEl.textContent);
+
+  // Heart button functionality
+  const heartButtons = document.querySelectorAll(".bg-white button img[src*='heart']");
+  heartButtons.forEach(btn => {
+    btn.parentElement.addEventListener("click", function () {
+      heartCount++;
+      heartCountEl.textContent = heartCount;
+    });
+  });
+
+  
+
+
+</script>
 
 </body>
 </html>
