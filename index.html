@@ -325,7 +325,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  
+  // Clear History button
+  clearBtn.addEventListener("click", function () {
+    const items = historyBox.querySelectorAll("div.flex.justify-between.items-center.border-b");
+    items.forEach(item => item.remove());
+  });
+});
+
 
 
 </script>
