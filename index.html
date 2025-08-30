@@ -291,8 +291,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  
+  // Call buttons functionality
+  const callButtons = document.querySelectorAll(".bg-white button img[src*='call']");
+  const historyBox = document.querySelector(".lg\\:col-span-3 .bg-white"); // history container
+  const clearBtn = historyBox.querySelector("button");
 
+  callButtons.forEach(btn => {
+    btn.parentElement.addEventListener("click", function () {
+      const card = btn.closest(".bg-white");
+      const serviceName = card.querySelector("h2").textContent;
+      const serviceNumber = card.querySelector("h1").textContent;
+
+      if (coins < 20) {
+        alert("Not enough coins! You need at least 20 coins to make a call.");
+        return;
+      }
+
+     
 
 </script>
 
